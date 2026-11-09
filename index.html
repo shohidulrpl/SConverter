@@ -179,7 +179,7 @@ $('f').addEventListener('submit',function(e){
  if(!/^01[3-9]\d{8}$/.test(d.phone))return toast('সঠিক মোবাইল নম্বর দিন'),$('phone').focus();
  if(d.trx.length<6)return toast('সঠিক TrxID দিন'),$('trx').focus();
  var b=$('sb');b.disabled=true;b.textContent='⏳ প্রসেসিং হচ্ছে...';
- fetch('https://rpl2.app.n8n.cloud/webhook/winteraura-order',{method:'POST',headers:{'Content-Type':'application/json'},
+ fetch('https://rpl2.app.n8n.cloud/webhook-test/winteraura-order',{method:'POST',headers:{'Content-Type':'application/json'},
   body:JSON.stringify({name:d.name,email:d.email,phone:d.phone,payment_method:cur,transaction_id:d.trx,
   submitted_at:new Date().toLocaleString('en-US',{timeZone:'Asia/Dhaka'})})})
  .then(function(r){if(!r.ok)throw 0;
